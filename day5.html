@@ -1,0 +1,125 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day5 - frontend</title>
+    <link rel="stylesheet" href="day4css.css">
+    
+	<style>
+	body {
+  text-align: center;
+  background-color: 	#D3D3D3;
+}
+
+.input-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+input {
+  width: 500px;
+  margin: 1.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px #000;
+  outline: 1px;
+  background-color: #DCDCDC;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.button-section {
+  margin-top: 3rem;
+}
+
+button {
+  margin: 0px 1.2rem;
+  width: 100px;
+  height: 60px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#result {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+	</style>
+	
+</head>
+<body>
+ <body>
+    <div class="header">
+      <h1>Simple Calculator</h1>
+    </div>
+    <div class="input-section">
+      <input id="input1" type="number" placeholder="Enter First Number: " />
+      <br />
+      <input id="input2" type="number" placeholder="Enter Second Number: " />
+    </div>
+    <div class="button-section">
+      <button  class="add btn">Add +</button>
+      <button class="subtract btn">
+        Subtract -
+      </button>
+      <button class="multiply btn">
+        Multiply *
+      </button>
+      <button  class="divide btn">Divide /</button>
+    </div>
+    <h2 id="result">Output:</h2>
+  </body>
+</body>
+
+<script>
+const num1 = document.getElementById("input1");
+const num2 = document.getElementById("input2");
+
+// buttons
+const addBtn = document.querySelector(".add");
+const subtractBtn = document.querySelector(".subtract");
+const multiplyBtn = document.querySelector(".multiply");
+const divideBtn = document.querySelector(".divide");
+
+// result
+const result = document.getElementById("result");
+
+// button events
+addBtn.addEventListener("click", () => {
+  const sum = parseInt(num1.value) + parseInt(num2.value);
+  result.innerText = `Result: ${sum}`;
+});
+
+subtractBtn.addEventListener("click", () => {
+  const subtract = parseInt(num1.value) - parseInt(num2.value);
+  result.innerText = `Result: ${subtract}`;
+});
+
+multiplyBtn.addEventListener("click", () => {
+  const multiply = parseInt(num1.value) * parseInt(num2.value);
+  result.innerText = `Result: ${multiply}`;
+});
+
+divideBtn.addEventListener("click", () => {
+  const divide = parseInt(num1.value) / parseInt(num2.value);
+  result.innerText = `Result: ${divide}`;
+});
+</script>
+
+</html>
