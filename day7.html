@@ -1,0 +1,150 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day7 - frontend</title>
+    <link rel="stylesheet" href="day4css.css">
+    
+	<style>
+      :root {
+        --background-color: #fffffe;
+        --color: #181818;
+      }
+      body {
+        text-align: left;
+        background-color: var(--background-color);
+        color: var(--color);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #16161a;
+          --color: #fffffe;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Open Console in Dev tools to see the output</h1>
+	<br><br>
+1. Write a JavaScript program to list the properties of a JavaScript object.<br>
+ Sample object: var student = { name : "David Rayy", sclass : "VI", rollno : 12 };<br>
+ Sample Output: name,sclass,rollno
+<br><br><br>
+ 2. Write a JavaScript program to delete the rollno property from the following object.<br>
+ Also print the object before or after deleting the property. <br>
+ Sample object: var student = { name : "David Rayy", sclass : "VI", rollno : 12 }; 
+<br><br><br>
+3. Write a JavaScript program to get the length of a JavaScript object.  <br>
+Sample object : var student = { name : "David Rayy", sclass : "VI", rollno : 12 }; 
+<br><br><br>
+4. Write a JavaScript program to display the reading status <br>(i.e. display book name, author name and reading status) <br>
+of the following books. var library = [ { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true }, <br>
+{ author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true }, <br>
+{ author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', readingStatus: false }]; 
+<br><br><br>
+5. Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes.<br>
+Volume of a cylinder : V = πr2h where r is the radius and h is the height of the cylinder. <br>
+Try To Attempt : Difficult Level Increased 
+<br><br><br>
+6. Write a JavaScript program to sort an array of JavaScript objects.  <br>
+Sample Object :<br> 
+  var library = [ { title: 'The Road Ahead', author: 'Bill Gates', libraryID: 1254 },<br>
+ { title: 'Walter Isaacson', author: 'Steve Jobs', libraryID: 4264 }, <br>
+ { title: 'Mockingjay: The Final Book of The Hunger Games', author: 'Suzanne Collins', libraryID: 3245 }];<br>
+ <br>
+ Expected Output:<br>
+ [[object Object] { author: "Walter Isaacson", libraryID: 4264, title: "Steve Jobs" }, <br>
+ [object Object] { author: "Suzanne Collins", libraryID: 3245, title: "Mockingjay: The Final Book of The Hunger Games" }, <br>
+ [object Object] { author: "The Road Ahead", libraryID: 1254, title: "Bill Gates" }]	
+    
+	<br> <br>
+	  </body>
+	<script>
+
+// Program 1
+
+var student = {
+    name : "David Rayy",
+    sclass : "VI", 
+    rollno : 12 };
+ console.log(Object.keys(student));
+
+
+//  Program 2
+
+var student = {
+    name : "David Rayy",
+    sclass : "VI", 
+    rollno : 12 };
+ console.log(student);
+ delete student.rollno;
+ console.log(student);
+
+
+ //Program 3
+
+ var student = {
+    name : "David Rayy",
+    sclass : "VI", 
+    rollno : 12 };
+ var count=0;
+ for(let item in student){
+ count++;
+ }
+ console.log(count);
+
+
+//  Program 4
+
+var library = [ 
+    { author: 'Bill Gates',title: 'The Road Ahead', readingStatus: true },
+    { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true }, 
+    { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', readingStatus: false}
+    ]; 
+    
+    for(var i=0;i<library.length;i++)
+    {
+     var book=library[i].title;
+     if(library[i].readingStatus)
+     console.log("Read - " + book);
+     else
+     console.log("Not Read - " + book);
+    }
+
+// Program 5
+
+function vol(r,h)
+{
+return 2*Math.PI*r*h
+}
+console.log("Volume is - " + vol(7,2).toFixed(4));
+
+// program 6
+ var library = 
+ [ { title: 'The Road Ahead', author: 'Bill Gates', libraryID: 1254 },
+ { title: 'Walter Isaacson', author: 'Steve Jobs', libraryID: 4264 },
+ { title: 'Mockingjay: The Final Book of The Hunger Games', author: 'Suzanne Collins', libraryID: 3245 }];
+ 
+
+console.log(library);
+
+function sortArr(x){
+	for(i=0; i<(x.length-1); i++){
+		if(x[i].libraryID<x[i+1].libraryID){
+			var a = x[i];
+			x[i] = x[i+1];
+			x[i+1] = a;
+		}
+	}
+}
+
+sortArr(library);
+console.log(library);
+
+	</script>
+
+</html>
