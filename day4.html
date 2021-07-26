@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>day4 - frontend</title>
-
+    <link rel="stylesheet" href="day4css.css">
     <style>
 	  
 #clock{  
@@ -13,8 +13,12 @@
     margin: auto;
     height: 40vw;
     width: 40vw; 
-    background: url(clock.png) no-repeat;
-    background-size: 100%;
+	
+   
+    border-radius: 300px;
+    border: 50px solid red;
+
+    box-shadow: 0 0 5px 5px grey, inset 0 0 10px 2px grey;
 
 }
 
@@ -48,6 +52,17 @@
 	transform: rotate(120deg);
     
 }
+#centerPT {
+    width: 1px;
+    height: 1px;
+    border-radius: 360px;
+    border: 12px solid black;
+    margin-top: 47%;
+    margin-left: 47%;
+	opacity:1;
+    
+}
+
 	</style>
 </head>
 <body>
@@ -55,6 +70,7 @@
         <div id="hour"></div>
         <div id="minute"></div>
         <div id="second"></div>
+		<div id="centerPT"></div>
     </div>
 </body>
 </html>
